@@ -31,6 +31,12 @@
         basemap: "arcgis-topographic" // Basemap layer
       });
 
+      const geojsonLayer = new GeoJSONLayer({
+        url: MegaCities.geojson, //https://ceciliaperla.github.io/GeoJSONandesri.js/MegaCities.geojson
+        copyright: "USGS Earthquakes"
+      });
+
+
       const view = new MapView({
         map: map,
         center: [-118.805, 34.027],
