@@ -31,9 +31,23 @@
         basemap: "arcgis-topographic" // Basemap layer
       });
 
+      const renderer = {
+        type: "simple",
+        field: "mag",
+        symbol: {
+          type: "simple-marker",
+          color: "orange",
+          outline: {
+            color: "white"
+          }
+        }
+        },
+
       const geojsonLayer = new GeoJSONLayer({
         url: "MegaCities.geojson", //https://ceciliaperla.github.io/GeoJSONandesri.js/MegaCities.geojson
         copyright: "USGS Earthquakes"
+        renderer: renderer
+ 
       });
 
 
