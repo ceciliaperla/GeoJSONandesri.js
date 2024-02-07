@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ArcGIS Developers Guide: Display a map (2D)</title>
+  <title>MegaCities</title>
   <style>
     html,
     body,
@@ -39,12 +39,10 @@
 
       const view = new MapView({
         map: map,
-        center: [-118.805, 34.027],
-        zoom: 13, // scale: 72223.819286
+        center: [0, 0],
+        zoom: 4, // scale: 72223.819286
         container: "viewDiv",
-        constraints: {
-          snapToZoom: false
-        }
+        layers: [GeoJSONLayer]
       });
 
     });
