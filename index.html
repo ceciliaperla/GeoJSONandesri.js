@@ -32,7 +32,7 @@
         basemap: "arcgis-topographic" // Basemap layer
       });
   
-      const url = "https://github.com/ceciliaperla/GeoJSONandesri.js/blob/af13ae72ae25e580e925199a3958a5504bed9d4d/MegaCities.geojson"; // Replace with your GeoJSON file URL
+      const url = "https://raw.githubusercontent.com/ceciliaperla/GeoJSONandesri.js/main/MegaCities.geojson"; // Replace with your GeoJSON file URL
   
       const geojsonLayer = new GeoJSONLayer({
         url: url
@@ -41,7 +41,7 @@
       map.add(geojsonLayer);
   
       const view = new MapView({
-        container: "index.html", // Replace with your container id
+        container: "viewDiv", // Replace with your container id
         map: map
       });
     });
