@@ -20,45 +20,30 @@
 
   <script>
     require([
-     "esri/config",
+      "esri/config",
       "esri/Map",
       "esri/layers/GeoJSONLayer",
       "esri/views/MapView"
-    ], function (esriConfig,Map, GeoJSONLayer, MapView) {
-
+    ], function (esriConfig, Map, GeoJSONLayer, MapView) {
+  
       esriConfig.apiKey = "AAPK9755276475124b62a9f18406bf9df053hT1BVy_sI_pyn3-Zjhv9M5KCtQ8BrSpmKDeT-PiRoiPBawcrUQc9fRc8mXjikJD-";
+      
       const map = new Map({
         basemap: "arcgis-topographic" // Basemap layer
       });
-
-      const renderer = {
-        type: "simple",
-        field: "mag",
-        symbol: {
-          type: "simple-marker",
-          color: "orange",
-          outline: {
-            color: "white"
-          }
-        }
-        },
-
+  
+      const url = "https://github.com/ceciliaperla/GeoJSONandesri.js/blob/af13ae72ae25e580e925199a3958a5504bed9d4d/MegaCities.geojson"; // Replace with your GeoJSON file URL
+  
       const geojsonLayer = new GeoJSONLayer({
-        url: "MegaCities.geojson", //https://ceciliaperla.github.io/GeoJSONandesri.js/MegaCities.geojson
-        copyright: "USGS Earthquakes"
-        renderer: renderer
- 
+        url: url
       });
-
-
+  
+      map.add(geojsonLayer);
+  
       const view = new MapView({
-        map: map,
-        center: [0, 0],
-        zoom: 4, // scale: 72223.819286
-        container: "viewDiv",
-        layers: [GeoJSONLayer]
+        container: "index.html", // Replace with your container id
+        map: map
       });
-
     });
   </script>
 </head>
